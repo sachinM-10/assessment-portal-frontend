@@ -1,4 +1,5 @@
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const ENV_URL = import.meta.env.VITE_API_URL;
+export const API_URL = ENV_URL ? (ENV_URL.endsWith('/api') ? ENV_URL : `${ENV_URL}/api`) : 'http://localhost:5000/api';
 
 export const getAuthHeaders = () => {
     const token = localStorage.getItem('token');

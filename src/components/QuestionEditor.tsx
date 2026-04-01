@@ -64,7 +64,7 @@ export default function QuestionEditor({ quizId }: Props) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin-questions", quizId] });
       queryClient.invalidateQueries({ queryKey: ["admin-quizzes"] });
-      toast.success("Question removed");
+      toast.success("Question removedd");
     },
   });
 
@@ -131,11 +131,10 @@ export default function QuestionEditor({ quizId }: Props) {
                     {(q.options as string[]).map((opt, j) => (
                       <span
                         key={j}
-                        className={`rounded-md px-2 py-1 text-xs ${
-                          opt === q.correctAnswer
+                        className={`rounded-md px-2 py-1 text-xs ${opt === q.correctAnswer
                             ? "bg-success/10 text-success font-medium"
                             : "bg-muted text-muted-foreground"
-                        }`}
+                          }`}
                       >
                         {String(opt)}
                       </span>

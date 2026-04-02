@@ -12,6 +12,7 @@ export default function AdminDashboard() {
 
   if (!isAdmin) {
     return (
+      
       <Layout>
         <Card className="border-border">
           <CardContent className="py-16 text-center">
